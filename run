@@ -1,0 +1,7 @@
+#/bin/bash
+
+gcc -c ./main.c -o ./build/main.o
+gcc -c ./src/algorithms.c -o ./build/algorithms.o
+
+gcc -o ./build/sort ./build/main.o ./build/algorithms.o
+./build/sort
