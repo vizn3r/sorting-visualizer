@@ -1,2 +1,2 @@
-#define MERGE
-#define FRAME_MS 100
+#define COMB
+#define FRAME_MS 50
