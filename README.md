@@ -1,1 +1,1 @@
-I'm sorry, Wind🤮ws users, this only runs on Linux
+This only runs on Linux. if you use Windows, run this on WSL.
