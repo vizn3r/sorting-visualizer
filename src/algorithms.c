@@ -261,3 +261,36 @@ void sort(int *arr, int n) {
   update(arr);
 }
 #endif
+#ifdef PIGEONHOLE
+void sort(int *arr, int n) {
+  if (n <= 0)
+    return;
+
+  int min = arr[0], max = arr[0];
+  for (int i = 1; i < n; i++) {
+    if (arr[i] < min)
+      min = arr[i];
+    if (arr[i] > max)
+      max = arr[i];
+  }
+
+  int range = max - min + 1;
+  int *holes = (int *)calloc(range, sizeof(int));
+
+  for (int i = 0; i < n; i++) {
+    holes[arr[i] - min]++;
+  }
+
+  int index = 0;
+  for (int i = 0; i < range; i++) {
+    while (holes[i] > 0) {
+      arr[index++] = i + min;
+      holes[i]--;
+      update(arr);
+    }
+  }
+
+  free(holes);
+  update(arr);
+}
+#endif
